@@ -33,17 +33,34 @@ while i <=user_range:
     i +=2
 
 # # 3. number guessing program
-# import random
+import random
 
-# guess_number = int(input('Please guess your number :-'))
-# target_number = random.randint(1,100)
-# condition = True
-# while condition:
-#     if guess_number == target_number:
-#         print(f'you are great, you guessed {guess_number}')
-#     if guess_number <= target_number:
-#         print(f"your is to low {guess_number}")
-#         print('please select another number.','\n')
-#         guess_number = int(input('please guess your number :-'))
+guess_number = int(input('Please guess your number :-'))
+target_number = random.randint(1,20)
+wrong_guessed_numbers = []
+attempt = 0
+condition = True
+while condition:
+    if guess_number == target_number:
+        print(f'you are great, you guessed This number {guess_number} in only {attempt} attempts.')
+        print(f"you have wrognly guessed these numbers :- {wrong_guessed_numbers}")
+        condition = False
+
+    elif guess_number <= target_number:
+        print(f"sorry you are too low {guess_number}")
+        print('please select larger number than this.','\n')
+        guess_number = int(input('please again guess your number :-'))
+        wrong_guessed_numbers.append(guess_number)
+        attempt += 1
+
+    else:
+        print(f"sorry you are too high {guess_number}")
+        print('please select lower number than this.','\n')
+        guess_number = int(input('please again guess your number :-'))
+        wrong_guessed_numbers.append(guess_number)
+        attempt += 1
+
+
+    
 
 

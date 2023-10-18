@@ -46,7 +46,7 @@ lst = [7,4,8,5,1,4,5,50,6,821,517,4,5,2,3,6,9]
 def sort_list(lst):
     for i in range(len(lst)):
         for j in range(len(lst)):
-            if lst[i] >lst[j]:
+            if lst[i] > lst[j]:
                 temp = lst[i]
                 lst[i] = lst[j]
                 lst[j] = temp

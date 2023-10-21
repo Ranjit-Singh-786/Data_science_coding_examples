@@ -1,4 +1,4 @@
-# 1. Single Inheritence without using constructor
+# 1. Single Inheritence using constructor
 
 class Parent:
     def __init__(self,father_name , mother_name , address):

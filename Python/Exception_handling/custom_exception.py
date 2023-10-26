@@ -8,7 +8,7 @@ class CustomError(Exception):
 # Defining a function not a method
 def divide(x,y):
     if y==0:
-        raise CustomError('bsdk zero he 🤣😂')
+        raise CustomError('bade bhaiya zero he🤣😂')
     else:
         return x / y
 

@@ -1,0 +1,14 @@
+Transfer Learning
+Transfer Learning freeze the layers of pretrained model. and add
+some extra layers on top of the pretrained model. 
+and after that traine the extra layers, which you have added extra layers in 
+pretrained model. that is called transfer learning.
+this technique is widely going popular. because it gives the good accuracy with in 
+minimum effort.
+
+fine-tuning
+A last, optional step, is fine-tuning, which consists of unfreezing 
+the entire model you obtained above (or part of it), and re-training
+it on the new data with a very low learning rate. This can potentially
+achieve meaningful improvements, by incrementally adapting the pretrained
+features to the new data.

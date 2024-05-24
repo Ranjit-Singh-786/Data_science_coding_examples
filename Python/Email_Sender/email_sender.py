@@ -10,7 +10,7 @@ try:
 
     # put your mail creditional
     sender_email = 'smartengineer0786@gmail.com'
-    password = '######'
+    password = 'ojsk kvqo fflz tvkc'
 
     # login in gmail.com with your creditions
     server.login(sender_email, password=password)
@@ -27,3 +27,4 @@ try:
     server.quit()
 except Exception as e:
     print('Mail was not sent 😒😒!')
+

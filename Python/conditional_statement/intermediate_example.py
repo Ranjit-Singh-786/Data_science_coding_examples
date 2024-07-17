@@ -16,8 +16,6 @@ task = int(input("enter you option :- "))
 available_amount = 5000
 
 if (task >=1) & (task <=3):
-
-
     if task == 1:
         #task 1 program for check balance
         balance_message = f"Thanks For visiting ! your availabe balance is :-INR {available_amount}"

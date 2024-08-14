@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parameter Collection Form</title>
+    <link rel="stylesheet" href="/static/styles2.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-wrapper {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            padding: 20px;
+            margin: 0 20px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input[type="text"]:focus {
+            border-color: #4CAF50;
+        }
+
+        .form-group.buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .form-group .btn-primary {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group .btn-primary:hover {
+            background-color: #45a049;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #007bb5;
+        }
+
+        @media (max-width: 480px) {
+            .form-wrapper {
+                width: 100%;
+            }
+
+            .form-group input[type="text"] {
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-wrapper">
+        <div class="form-container">
+            <h2>Enter Soil Parameters</h2>
+            <form action="{{ url_for('submit') }}" method="post">
+                <div class="form-group">
+                    <label for="n">Nitrogen:</label>
+                    <input type="text" id="n" name="n" required>
+                </div>
+                <div class="form-group">
+                    <label for="p">Phosphorus:</label>
+                    <input type="text" id="p" name="p" required>
+                </div>
+                <div class="form-group">
+                    <label for="k">Potassium:</label>
+                    <input type="text" id="k" name="k" required>
+                </div>
+                <div class="form-group">
+                    <label for="temperature">Temperature:</label>
+                    <input type="text" id="temperature" name="temperature" required>
+                </div>
+                <div class="form-group">
+                    <label for="humidity">Humidity:</label>
+                    <input type="text" id="humidity" name="humidity" required>
+                </div>
+                <div class="form-group">
+                    <label for="ph">pH:</label>
+                    <input type="text" id="ph" name="ph" required>
+                </div>
+                <div class="form-group">
+                    <label for="rainfall">Rainfall:</label>
+                    <input type="text" id="rainfall" name="rainfall" required>
+                </div>
+                <div class="form-group buttons">
+                    <a href="/" class="btn-primary">Back</a>
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

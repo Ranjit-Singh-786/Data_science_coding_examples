@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url('/static/images/rain.gif');
+    background-size: 120%; /* Adjust this value to zoom out */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    padding: 10px 20px;
+    background-color: transparent; /* Transparent background for header */
+    
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    width: 100px;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+.btn-primary {
+    background-color: #28a745;
+    color: white;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    display: inline-block;
+    text-align: center;
+    width: 80px;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+}
+
+.form-group.buttons {
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,107 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #f0f0f0; /* Fallback color */
+    background-image: url('/static/images/weather-natue.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom: 2px solid #ddd;
+}
+
+header .logo img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+header h1 {
+    font-size: 36px;
+    color: black;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+header h1 span {
+    color: rgb(31, 185, 31);
+}
+
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Welcome Section */
+.welcome-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.welcome-text {
+    max-width: 50%;
+    text-align: left;
+}
+
+.welcome-heading {
+    font-size: 48px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.welcome-heading span {
+    color: rgb(31, 185, 31);
+}
+
+.welcome-image {
+    width: 400px;
+}
+
+/* Button Styling */
+.btn-primary {
+    padding: 10px 20px;
+    color: antiquewhite;
+    background-color: dodgerblue;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: rgb(10, 116, 222);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-top: 2px solid #ddd;
+    margin-top: 50px;
+    font-size: 14px;
+    color: black;
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Laptop Price</title>
+    
+    <style>
+        body {
+            background-color: #f4f4f9;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: 500;
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background-color: #fafafa;
+            color: #333;
+        }
+        .form-control::placeholder {
+            color: #aaa;
+            opacity: 0.9;
+        }
+        .form-control:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        select.form-control {
+            appearance: none;
+            background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="%23333" viewBox="0 0 24 24"><path d="M12 15.5L4 8.5H20L12 15.5Z"></path></svg>') no-repeat right 10px center;
+            background-size: 12px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Laptop Specifications</h1>
+        <form action="{{ url_for('predict') }}" method="POST">
+            <div class="form-group">
+                <label for="screenSize">Screen Size (inches):</label>
+                <input type="text" class="form-control" id="screenSize" name="screenSize" placeholder="Enter screen size" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ram">RAM (GB):</label>
+                <input type="text" class="form-control" id="ram" name="ram" placeholder="Enter RAM size" required>
+            </div>
+
+            <div class="form-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="text" class="form-control" id="weight" name="weight" placeholder="Enter weight" required>
+            </div>
+
+            <div class="form-group">
+                <label for="processorSpeed">Processor Speed (GHz):</label>
+                <input type="text" class="form-control" id="processorSpeed" name="processorSpeed" placeholder="Enter processor speed" required>
+            </div>
+
+            <div class="form-group">
+                <label for="width">Width (mm):</label>
+                <input type="text" class="form-control" id="width" name="width" placeholder="Enter width" required>
+            </div>
+
+            <div class="form-group">
+                <label for="height">Height (mm):</label>
+                <input type="text" class="form-control" id="height" name="height" placeholder="Enter height" required>
+            </div>
+
+            <div class="form-group">
+                <label for="storageCapacity">Storage Capacity (GB):</label>
+                <input type="text" class="form-control" id="storageCapacity" name="storageCapacity" placeholder="Enter storage capacity" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gpuCode">GPU Code:</label>
+                <input type="text" class="form-control" id="gpuCode" name="gpuCode" placeholder="Enter GPU code" required>
+            </div>
+
+            <div class="form-group">
+                <label for="company">Company:</label>
+                <select id="company" name="company" class="form-control" required>
+                    <option value="Acer">Acer</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Asus">Asus</option>
+                    <option value="Chuwi">Chuwi</option>
+                    <option value="Dell">Dell</option>
+                    <option value="Fujitsu">Fujitsu</option>
+                    <option value="Google">Google</option>
+                    <option value="HP">HP</option>
+                    <option value="Huawei">Huawei</option>
+                    <option value="LG">LG</option>
+                    <option value="Lenovo">Lenovo</option>
+                    <option value="MSI">MSI</option>
+                    <option value="Mediacom">Mediacom</option>
+                    <option value="Microsoft">Microsoft</option>
+                    <option value="Razer">Razer</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Toshiba">Toshiba</option>
+                    <option value="Vero">Vero</option>
+                    <option value="Xiaomi">Xiaomi</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="type">Type:</label>
+                <select id="type" name="type" class="form-control" required>
+                    <option value="2 in 1 Convertible">2 in 1 Convertible</option>
+                    <option value="Gaming">Gaming</option>
+                    <option value="Netbook">Netbook</option>
+                    <option value="Notebook">Notebook</option>
+                    <option value="Ultrabook">Ultrabook</option>
+                    <option value="Workstation">Workstation</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="os">Operating System:</label>
+                <select id="os" name="os" class="form-control" required>
+                    <option value="Android">Android</option>
+                    <option value="Chrome OS">Chrome OS</option>
+                    <option value="Linux">Linux</option>
+                    <option value="Mac OS X">Mac OS X</option>
+                    <option value="No OS">No OS</option>
+                    <option value="Windows 10">Windows 10</option>
+                    <option value="Windows 10 S">Windows 10 S</option>
+                    <option value="Windows 7">Windows 7</option>
+                    <option value="macOS">macOS</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="generation">Generation:</label>
+                <select id="generation" name="generation" class="form-control" required>
+                    <option value="Generation 1">Generation 1</option>
+                    <option value="Generation 3">Generation 3</option>
+                    <option value="Generation 5">Generation 5</option>
+                    <option value="Generation 7">Generation 7</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn">Predict</button>
+        </form>
+        
+        <div class="footer">
+            <p>Powered by your laptop price prediction model</p>
+        </div>
+    </div>
+</body>
+</html>

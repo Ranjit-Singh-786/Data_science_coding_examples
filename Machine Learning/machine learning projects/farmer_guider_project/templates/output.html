@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parameter Collection Form</title>
+    <link rel="stylesheet" href="/static/styles3.css">
+</head>
+<body>
+    <div class="grow-section">
+        <h1>You can <span class="highlight">Grow</span>:</h1>
+        <div class="crops-container">
+            {% for crop in crops %}
+                <div class="crop-item">
+                    <img src="{{ url_for('static', filename='images/' + crop.image) }}" alt="{{ crop.name }}" class="crop-image">
+                    <div class="crop-name">{{ crop.name }}</div>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="/" class="btn-primary">Back</a>
+    </div>
+</body>
+
+</html>

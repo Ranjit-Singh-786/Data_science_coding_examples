@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Classification</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Email Classification</h1>
+    </header>
+
+    <div class="container">
+        <form action="{{ url_for('prediction') }}" method="post">
+            <textarea id="emailContent" name="emailContent" required rows="6" class="form-control" placeholder="Paste your email content here..."></textarea>
+            <button type="submit" class="btn btn-primary mt-3 w-100">Classify Email</button>
+        </form>
+
+        {% if output %}
+        <div class="result">
+            <h2>Classification Result: {{ output }}</h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
